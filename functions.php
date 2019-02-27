@@ -1,4 +1,4 @@
-<?
+<?php
 
 //    Return Font Awesome icon
     function i($code){

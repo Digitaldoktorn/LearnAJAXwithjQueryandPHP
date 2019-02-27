@@ -1,4 +1,4 @@
-<?include('functions.php')?>
+<?php include('functions.php')?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,27 +19,29 @@
 
         <header class="row">
 
-            <div class="col-xs-6">
+            <div class="col-6">
                 <a href="#">Enter Restore Mode</a>
             </div>
             <div class="col-6 text-right"> <!-- Bootstrap 4 syntax -->
                 Total Time:
+
             </div>
 
         </header>
 
         <div class="row">
-            <form id="form-new">
-                <!-- Can not get same width as in the tutorial -->
-                <div class="col-xs-10">
-                    <input id="task" name="task" class="form-control" placeholder="Enter new task name...">
-                </div>
-                <div class="col-xs-2">
-                    <button type="submit" class="btn btn-block btn-success"><i class="fa fa-play"></i></button><!-- Can't get the i function to work on the buttons -->
-                </div>
 
-            </form>
         </div>
+        <form id="form-new">
+            <!-- Can not get same width as in the tutorial -->
+            <div class="col-10">
+                <input id="task" name="task" class="form-control" placeholder="Enter new task name...">
+            </div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-block btn-success"><i class="fa fa-play"></i></button><!-- Can't get the i function to work on the buttons -->
+            </div>
+
+        </form>
         <hr>
 
         <table class="table table-bordered">
@@ -54,7 +56,7 @@
             </thead>
             <tbody>
 
-            <?
+            <?php
                 $data = file_get_contents('data.json');
 
                 $array = json_decode($data, 1);
@@ -63,14 +65,14 @@
 
 
                 <tr>
-                    <td><?=$task['name']?></td><!-- I get nothing printed as in Video 10 (6:49)-->
+                    <td><?php echo $task['name']?></td><!-- I get nothing printed as in Video 10 (6:49)-->
                     <td>Data</td>
                     <td>Data</td>
                     <td>Data</td>
                     <td><button class="btn btn-primary">Stop</button></td>
                     <td><button class="btn btn-danger">X</button></td>
                 </tr>
-            <?}?>
+            <?php }?>
             </tbody>
         </table>
 
